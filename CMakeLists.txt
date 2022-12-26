@@ -3,4 +3,5 @@ project(type_erasure)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(type_erasure inheritance.cpp)
+add_executable(inheritance inheritance.cpp)
+add_executable(manual_type_erasure manual_type_erasure.cpp)
