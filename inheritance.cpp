@@ -1,6 +1,6 @@
 #include <string>
 #include <string_view>
-#include <memory>
+#include <polymorphic_value.h>
 
 class Logger {
 public:
@@ -35,7 +35,7 @@ private:
 };
 
 struct Program {
-    std::unique_ptr<Logger> logger;
+    isocpp_p0201::polymorphic_value<Logger> logger;
 
     int execute() {
         logger->clear();
@@ -45,5 +45,5 @@ struct Program {
 };
 
 int main() {
-    return Program{std::make_unique<StringLogger>()}.execute();
+    return Program{isocpp_p0201::make_polymorphic_value<Logger, StringLogger>()}.execute();
 }

@@ -1,11 +1,11 @@
 #include <string>
 #include <string_view>
-#include <memory>
+#include <polymorphic_value.h>
 
 class Logger {
 public:
     template<class T>
-    Logger(T data) : object_{std::make_unique<Model < T>>(std::move(data))} {}
+    Logger(T data) : object_{isocpp_p0201::make_polymorphic_value<Concept, Model < T>>(std::move(data))} {}
 
     void log(std::string_view const message) {
         object_->log(message);
@@ -52,7 +52,7 @@ private:
         T data_;
     };
 
-    std::unique_ptr<Concept> object_;
+    isocpp_p0201::polymorphic_value<Concept> object_;
 };
 
 class StringLogger {
