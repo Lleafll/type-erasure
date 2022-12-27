@@ -8,9 +8,9 @@
 namespace bte = boost::type_erasure;
 namespace mpl = boost::mpl;
 
-BOOST_TYPE_ERASURE_MEMBER(log);
-BOOST_TYPE_ERASURE_MEMBER(content);
-BOOST_TYPE_ERASURE_MEMBER(clear);
+BOOST_TYPE_ERASURE_MEMBER(log)
+BOOST_TYPE_ERASURE_MEMBER(content)
+BOOST_TYPE_ERASURE_MEMBER(clear)
 
 using Logger = bte::any<mpl::vector<
         bte::copy_constructible<>,
