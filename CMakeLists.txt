@@ -3,6 +3,7 @@ project(type_erasure)
 
 set(CMAKE_CXX_STANDARD 20)
 
+set(Boost_NO_WARN_NEW_VERSIONS ON)
 find_package(Boost REQUIRED COMPONENTS type_erasure)
 find_package(polymorphic-value CONFIG REQUIRED CONFIGS polymorphic_value-config.cmake)
 find_package(proxy CONFIG REQUIRED)
