@@ -54,5 +54,5 @@ struct Program {
 };
 
 int main() {
-    return Program{pro::make_proxy<LoggerFacade>(StringLogger{})}.execute();
+    return Program{pro::make_proxy<LoggerFacade, StringLogger>()}.execute();
 }
