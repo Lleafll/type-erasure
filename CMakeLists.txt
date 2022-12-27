@@ -13,6 +13,8 @@ FetchContent_Declare(boostextte
         GIT_TAG 27465847fe489d33a91014488284210f183cb502)
 FetchContent_MakeAvailable(boostextte)
 
+add_subdirectory(dependencies)
+
 add_executable(inheritance inheritance.cpp)
 target_link_libraries(inheritance PRIVATE polymorphic_value::polymorphic_value)
 
@@ -27,3 +29,6 @@ target_link_libraries(boost_type_erasure PRIVATE Boost::type_erasure)
 
 add_executable(boostext_te boostext_te.cpp)
 target_include_directories(boostext_te PRIVATE ${boostextte_SOURCE_DIR}/include)
+
+add_executable(dyno_example dyno_example.cpp)
+target_link_libraries(dyno_example PRIVATE dyno)
