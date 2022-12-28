@@ -16,7 +16,10 @@ FetchContent_Declare(AnyAny
 FetchContent_Declare(boostextte
         GIT_REPOSITORY https://github.com/boost-ext/te.git
         GIT_TAG 27465847fe489d33a91014488284210f183cb502)
-FetchContent_MakeAvailable(AnyAny boostextte)
+FetchContent_Declare(CppDyn
+        GIT_REPOSITORY https://github.com/qnope/CppDyn.git
+        GIT_TAG 803f1bccc0ec40717ff1e270e7a48b2bed5a684f)
+FetchContent_MakeAvailable(AnyAny boostextte CppDyn)
 
 add_subdirectory(dependencies)
 
@@ -46,3 +49,6 @@ target_link_libraries(entt_poly_example PRIVATE EnTT::EnTT)
 
 add_executable(folly_poly_example folly_poly_example.cpp)
 target_link_libraries(folly_poly_example PRIVATE Folly::folly)
+
+add_executable(cppdyn_example cppdyn_example.cpp)
+target_link_libraries(cppdyn_example PRIVATE DYN::DYN)
