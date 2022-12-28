@@ -7,6 +7,7 @@
     "boost-hana",
     "boost-type-erasure",
     "entt",
+    "folly",
     "polymorphic-value",
     "proxy"
   ]
