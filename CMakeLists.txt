@@ -8,10 +8,13 @@ find_package(Boost REQUIRED COMPONENTS type_erasure)
 find_package(polymorphic-value CONFIG REQUIRED CONFIGS polymorphic_value-config.cmake)
 find_package(proxy CONFIG REQUIRED)
 include(FetchContent)
+FetchContent_Declare(AnyAny
+        GIT_REPOSITORY https://github.com/kelbon/AnyAny.git
+        GIT_TAG 3bc20819d65b535ef884fda1167a6c74eac074c8)
 FetchContent_Declare(boostextte
         GIT_REPOSITORY https://github.com/boost-ext/te.git
         GIT_TAG 27465847fe489d33a91014488284210f183cb502)
-FetchContent_MakeAvailable(boostextte)
+FetchContent_MakeAvailable(AnyAny boostextte)
 
 add_subdirectory(dependencies)
 
@@ -32,3 +35,6 @@ target_include_directories(boostext_te PRIVATE ${boostextte_SOURCE_DIR}/include)
 
 add_executable(dyno_example dyno_example.cpp)
 target_link_libraries(dyno_example PRIVATE dyno)
+
+add_executable(anyany_example anyany_example.cpp)
+target_link_libraries(anyany_example PRIVATE anyanylib)
