@@ -6,6 +6,7 @@
     "boost-callable-traits",
     "boost-hana",
     "boost-type-erasure",
+    "entt",
     "polymorphic-value",
     "proxy"
   ]

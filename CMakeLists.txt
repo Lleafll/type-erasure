@@ -5,6 +5,7 @@ set(CMAKE_CXX_STANDARD 20)
 
 set(Boost_NO_WARN_NEW_VERSIONS ON)
 find_package(Boost REQUIRED COMPONENTS type_erasure)
+find_package(EnTT CONFIG REQUIRED)
 find_package(polymorphic-value CONFIG REQUIRED CONFIGS polymorphic_value-config.cmake)
 find_package(proxy CONFIG REQUIRED)
 include(FetchContent)
@@ -38,3 +39,6 @@ target_link_libraries(dyno_example PRIVATE dyno)
 
 add_executable(anyany_example anyany_example.cpp)
 target_link_libraries(anyany_example PRIVATE anyanylib)
+
+add_executable(entt_poly_example entt_poly_example.cpp)
+target_link_libraries(entt_poly_example PRIVATE EnTT::EnTT)
